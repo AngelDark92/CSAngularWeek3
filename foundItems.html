@@ -1,0 +1,18 @@
+<table class="table" ng-show="list.found.length > 0">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr ng-repeat="found in list.found">
+          <td>{{ found.name }}</td>
+          <td>{{ found.description }}</td>
+          <td>
+              <button type="button" class="btn btn-danger" ng-click="list.removeItem($index)">Don't want this one!</button>
+          </td>
+      </tr>
+  </tbody>
+</table>
