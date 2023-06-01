@@ -14,9 +14,9 @@
       templateUrl: 'foundItems.html',
       restrict: 'E',
       scope: {
+        searchPerformed: "=",
         found: '<',
         onEmpty: '<',
-        onRemove: '&'
       },
       controller: NarrowItDownController,
       controllerAs: 'list',
@@ -30,8 +30,10 @@
 
     ctrl.found = [];
     ctrl.searchTerm = '';
+    ctrl.searchPerformed = false;
 
     ctrl.getMatchedItems = function (searchTerm) {
+      ctrl.searchPerformed = true;
       MenuSearchService.getMatchedMenuItems(searchTerm)
         .then(function (response) {
           ctrl.found = response;

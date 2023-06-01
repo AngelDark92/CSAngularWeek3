@@ -21,7 +21,7 @@
       <button class="btn btn-primary" ng-click="ctrl.getMatchedItems(ctrl.searchTerm)">Narrow It Down For Me!</button>
     </div>
     <div class="directive-container">
-      <found-items found="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
+      <found-items found="ctrl.found" on-remove="ctrl.removeItem(index)" search-performed="ctrl.searchPerformed"></found-items>
     </div>
   </div>
 
