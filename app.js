@@ -61,13 +61,12 @@
             if (result.data.hasOwnProperty(category)) {
               var menuItems = result.data[category]['menu_items'];
               for (var i = 0; i < menuItems.length; i++) {
-                if (!searchTerm || searchTerm.length === 0 || menuItems[i]['description'].toLowerCase().indexOf(searchTerm) !== -1) {
+                if (searchTerm && searchTerm.length > 0 && menuItems[i]['description'].toLowerCase().indexOf(searchTerm) !== -1) {
                   foundItems.push(menuItems[i]);
                 }
               }
             }
           }
-          console.log(foundItems);
           return foundItems;
         })
     };
